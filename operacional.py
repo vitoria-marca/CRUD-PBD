@@ -1,4 +1,7 @@
 from django.db import models
+from .atendimento import *
+from .registro import *
+
 
 class Campanha(models.Model):
     id_campanha = models.AutoField(primary_key=True)
