@@ -40,11 +40,12 @@ INSTALLED_APPS = [
 ]
 
 JAZZMIN_SETTINGS = {
-    "site_title": "UBS Admin",
-    "site_header": "Gestão UBS",
-    "welcome_sign": "Bem-vindo ao Sistema da UBS",
-    "copyright": "Larissa Gabriela & Vitória Santa Lucia",
 
+    "site_header": "UBS - Admin",
+    "site_brand": "PBD",
+    "welcome_sign": "Administração UBS | Projeto BD UFPel",
+    "site_title": "UBS Admin",
+    "copyright": "Larissa Gabriela & Vitória Santa Lucia",
     "show_sidebar": True,
     "navigation_expanded": True,
     "use_google_fonts_cdn": True,
