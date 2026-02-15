@@ -6,10 +6,10 @@ Os requisitos do projeto são:
 **Banco de Dados:** PostgreSQL 9.5.    
 
 ## Rodando o projeto
-Crie uma pasta com o nome de sua preferência e, no terminal, rode: 
+Crie uma pasta com o nome de sua preferência e, no terminal, rode:
 
     git clone https://github.com/vitoria-marca/CRUD-PBD.git 
-    cd ubs_PBD
+    cd CRUD_PBD
 Crie o ambiente virtual: 
 
     python -m venv venv 
