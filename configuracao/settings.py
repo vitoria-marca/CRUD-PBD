@@ -13,26 +13,23 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(os.path.join(BASE_DIR,".env"))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "ubs_core/static"),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 SECRET_KEY = 'django-insecure-r@8(@_cc$s=j4r#lg@wg)b4qtnuy^%g07cu60&baj4mpgzx&r3'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
-
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ubs_core',
 ]
+
+JAZZMIN_SETTINGS = {
+    "site_title": "UBS Admin",
+    "site_header": "Gestão UBS",
+    "welcome_sign": "Bem-vindo ao Sistema da UBS",
+    "copyright": "Larissa Gabriela & Vitória Santa Lucia",
+
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "use_google_fonts_cdn": True,
+    "show_ui_builder": True   
+
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -112,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
