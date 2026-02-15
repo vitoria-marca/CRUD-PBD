@@ -47,8 +47,8 @@ class ParticipacaoCampanha(models.Model):
 class AplicacaoVacina(models.Model):
     id_paciente = models.OneToOneField('Paciente', models.DO_NOTHING, db_column='id_paciente', primary_key=True)
     id_vacina = models.ForeignKey('Vacina', models.DO_NOTHING, db_column='id_vacina')
-    id_profissional = models.ForeignKey('Enfermeiro', models.DO_NOTHING, db_column='id_profissional', blank=True, null=True)
-    data_aplicacao = models.DateField()
+    id_profissional = models.ForeignKey('Enfermeiro', models.DO_NOTHING, db_column='id_profissional', blank=True, null=False)
+    data_aplicacao = models.DateField(null=False)
     dose = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
