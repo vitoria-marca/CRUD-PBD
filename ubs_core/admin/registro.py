@@ -9,6 +9,17 @@ class AplicacaoVacinaInline(admin.TabularInline):
     readonly_fields = ('data_aplicacao',) 
     can_delete = False
 
+class ConsultaInline(admin.TabularInline):
+    model = Consulta
+    extra = 0 
+    fields = ('data', 'horario', 'id_paciente', 'id_profissional')
+    #readonly_fields = ('data_aplicacao',) 
+    can_delete = False
+
+    def nome_medico(self, obj):
+        return obj.id_profissional.nome
+    nome_medico.short_description = 'Médico'
+
 class ParticipacaoCampanhaInline(admin.TabularInline):
     model = ParticipacaoCampanha
     extra = 0
@@ -19,7 +30,7 @@ class ParticipacaoCampanhaInline(admin.TabularInline):
 class PacienteAdmin(admin.ModelAdmin):
     list_display = ('nome', 'cartao_sus')
     search_fields = ('nome', 'cartao_sus')
-    inlines = [AplicacaoVacinaInline, ParticipacaoCampanhaInline]
+    inlines = [AplicacaoVacinaInline, ParticipacaoCampanhaInline, ConsultaInline]
 
 class MedicoInline(admin.StackedInline):
     model = Medico
